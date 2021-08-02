@@ -1,0 +1,4 @@
+overridden method can't throw big and unrelated exception 
+no such rule in overloading
+
+in constructor -- child class can't throw small and unrelated exception
