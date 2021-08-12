@@ -11,7 +11,7 @@ import java.util.List;
 
 import com.bookStore.dao.factory.DBConnectionFactory;
 import com.bookStore.entities.Book;
-import com.bookStore.exceptions.DataAccessException;
+import com.bookStore.exceptions.DaoException;
 import com.bookStore.exceptions.ResourceNotFoundException;
 public class BookDaoImpJdbc implements BookDao{
 
@@ -35,7 +35,7 @@ public class BookDaoImpJdbc implements BookDao{
 						rs.getDouble("price"),
 						rs.getDate("pubDate")));
 		} catch(SQLException e) {
-			throw new DataAccessException(e.toString());
+			throw new DaoException(e.toString());
 		}
 		
 		return books;
@@ -55,7 +55,7 @@ public class BookDaoImpJdbc implements BookDao{
 						rs.getDate("pubDate"));
 			}
 		} catch (SQLException e) {
-			throw new DataAccessException(e.toString());
+			throw new DaoException(e.toString());
 		}
 		return book;
 	}
@@ -78,7 +78,7 @@ public class BookDaoImpJdbc implements BookDao{
 			if(rs.next())
 				book.setId(rs.getInt(1));
 		} catch (SQLException e) {
-			throw new DataAccessException(e.toString());
+			throw new DaoException(e.toString());
 		}
 		return book;
 	}
@@ -90,7 +90,7 @@ public class BookDaoImpJdbc implements BookDao{
             pstmt.setInt(1, id);
             pstmt.executeUpdate();
 		} catch (SQLException e) {
-			throw new DataAccessException(e.toString());
+			throw new DaoException(e.toString());
 		}
 		
 	}
@@ -106,7 +106,7 @@ public class BookDaoImpJdbc implements BookDao{
             pstmt.executeUpdate();
 
         } catch (SQLException ex) {
-            throw new DataAccessException(ex.toString());
+            throw new DaoException(ex.toString());
         }
 
 	}
@@ -128,7 +128,7 @@ public class BookDaoImpJdbc implements BookDao{
                 throw new ResourceNotFoundException("book with isbn :=" + isbn + " is not found");
             }
         } catch (SQLException e) {
-            throw new DataAccessException(e.toString());
+            throw new DaoException(e.toString());
         }
         return book;
     }
