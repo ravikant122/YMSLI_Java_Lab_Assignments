@@ -42,8 +42,11 @@ public class BookStore {
 	
 	public void order(String isbn, int numOfCopies) {
 		Book currBook=null;
+		int curr_index=0;
 		for(Book book:books) {
-			if(book.getBookTitle().equals(isbn)) {
+			if(curr_index>=counter)
+				break;
+			if(book.getISBN().equals(isbn)) {
 				currBook=book;
 				break;
 			}
