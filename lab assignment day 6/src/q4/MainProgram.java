@@ -4,7 +4,7 @@ public class MainProgram {
 
 	public static void main(String[] args) {
 		BookCollection bc=new BookCollection("rk");
-		bc.addBookInCollection(new Book("book3","rk3"));
+		bc.addBookInCollection(new Book("book4","rk3"));
 		bc.addBookInCollection(new Book("Java in depth","rk5"));
 		bc.addBookInCollection(new Book("book4","rk4"));
 		bc.addBookInCollection(new Book("book1","rk1"));

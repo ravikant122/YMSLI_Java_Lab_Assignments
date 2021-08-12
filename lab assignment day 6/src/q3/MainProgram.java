@@ -7,7 +7,7 @@ public class MainProgram {
 		bc.addBookInCollection(new Book("book1","rk1"));
 		bc.addBookInCollection(new Book("book2","rk2"));
 		bc.addBookInCollection(new Book("book3","rk3"));
-		bc.addBookInCollection(new Book("book4","rk4"));
+		bc.addBookInCollection(new Book("book3","rk4"));
 		bc.addBookInCollection(new Book("book5","rk5"));
 		
 		System.out.println(bc.toString());
